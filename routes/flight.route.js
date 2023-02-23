@@ -20,7 +20,7 @@ flightRouter.get("/flights", async (req, res) => {
 flightRouter.get("/flights/:id", async (req, res) => {
     const ID = req.params.id;
     try {
-       const flight = await flightModel.find( { userID: ID} );
+       const flight = await flightModel.find(ID);
        res.send(flight);
     }
     catch (err) {
